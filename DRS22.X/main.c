@@ -56,6 +56,7 @@ int main(void)
     SYSTEM_Initialize();
     while (1)
     {
+        
         LED2_SetHigh();
         // Add your application code
     }

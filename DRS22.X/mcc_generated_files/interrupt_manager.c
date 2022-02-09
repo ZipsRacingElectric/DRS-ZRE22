@@ -52,4 +52,7 @@
 */
 void INTERRUPT_Initialize (void)
 {
+    //    CI: ECAN1 Event
+    //    Priority: 1
+        IPC8bits.C1IP = 1;
 }
