@@ -91,7 +91,6 @@ void DMA_Initialize(void)
     // Clearing Channel 1 Interrupt Flag;
     IFS0bits.DMA1IF = false;
     // Enabling Channel 1 Interrupt
-    IEC0bits.DMA1IE = 1;
 
     // AMODE Peripheral Indirect Addressing mode; CHEN disabled; SIZE 16 bit; DIR Reads from peripheral address, writes to RAM address; NULLW disabled; HALF Initiates interrupt when all of the data has been moved; MODE Continuous, Ping-Pong modes are disabled; 
     DMA2CON= 0x20 & 0x7FFF; //Enable DMA Channel later;
@@ -112,7 +111,6 @@ void DMA_Initialize(void)
     // Clearing Channel 2 Interrupt Flag;
     IFS1bits.DMA2IF = false;
     // Enabling Channel 2 Interrupt
-    IEC1bits.DMA2IE = 1;
 
     // MODE Continuous, Ping-Pong modes are disabled; AMODE Register Indirect with Post-Increment mode; CHEN disabled; HALF Initiates interrupt when all of the data has been moved; SIZE 16 bit; DIR Reads from peripheral address, writes to RAM address; NULLW disabled; 
     DMA3CON= 0x00 & 0x7FFF; //Enable DMA Channel later;
@@ -155,22 +153,30 @@ void __attribute__ ((weak)) DMA_Channel1_CallBack(void)
     // Add your custom callback code here
 }
 
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _DMA1Interrupt( void )
+void DMA_Channel1_Tasks( void )
 {
-	DMA_Channel1_CallBack();
-	
-    IFS0bits.DMA1IF = 0;
+	if(IFS0bits.DMA1IF)
+	{
+		// DMA Channel1 callback function 
+		DMA_Channel1_CallBack();
+		
+		IFS0bits.DMA1IF = 0;
+	}
 }
 void __attribute__ ((weak)) DMA_Channel2_CallBack(void)
 {
     // Add your custom callback code here
 }
 
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _DMA2Interrupt( void )
+void DMA_Channel2_Tasks( void )
 {
-	DMA_Channel2_CallBack();
-	
-    IFS1bits.DMA2IF = 0;
+	if(IFS1bits.DMA2IF)
+	{
+		// DMA Channel2 callback function 
+		DMA_Channel2_CallBack();
+		
+		IFS1bits.DMA2IF = 0;
+	}
 }
 void __attribute__ ((weak)) DMA_Channel3_CallBack(void)
 {
