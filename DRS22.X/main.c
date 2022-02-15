@@ -47,6 +47,10 @@
 */
 #include "mcc_generated_files/system.h"
 #include "mcc_generated_files/pin_manager.h"
+#include "can_driver.h"
+#include "global_constants.h"
+#include <libpic30.h>        // __delayXXX() functions
+
 /*
                          Main application
  */
@@ -54,10 +58,15 @@ int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    CAN_Initialize();
+    uint8_t arrayOne[8];
     while (1)
     {
+        CAN_Msg_Send(ID_CAN_DRS_STATE, 1, arrayOne);
         LED2_SetHigh();
+        __delay_ms(100);
         // Add your application code
+        
     }
     return 1; 
 }
