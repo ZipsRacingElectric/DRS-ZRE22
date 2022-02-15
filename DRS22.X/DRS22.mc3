@@ -68,7 +68,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DMA" name="uiUpdateForCan"/>
-         <value>CAN1 TX0CAN1 RX1</value>
+         <value>CAN1 TX0CAN1 RX2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DMA" registerAlias="DMACH0" settingAlias="AMODE0" alias="Peripheral Indirect Addressing mode"/>
@@ -732,7 +732,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA" registerAlias="DMACH1"/>
-         <value>32</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA" registerAlias="DMACH2"/>
@@ -748,7 +748,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA" registerAlias="DMACNT1"/>
-         <value>7</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA" registerAlias="DMACNT2"/>
@@ -764,11 +764,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA" registerAlias="DMAINT1"/>
-         <value>34</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA" registerAlias="DMAINT2"/>
-         <value>10</value>
+         <value>34</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DMA" registerAlias="DMAINT3"/>
@@ -876,7 +876,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMA1I" settingAlias="enable"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMA1I" settingAlias="flag"/>
@@ -892,7 +892,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMA2I" settingAlias="enable"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMA2I" settingAlias="flag"/>
@@ -948,7 +948,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMACH1" settingAlias="AMODE1"/>
-         <value>Peripheral Indirect Addressing mode</value>
+         <value>Register Indirect with Post-Increment mode</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMACH1" settingAlias="CHEN1"/>
@@ -1036,7 +1036,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMACNT1" settingAlias="CNT1"/>
-         <value>7</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMACNT2" settingAlias="CNT2"/>
@@ -1060,7 +1060,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMAINT1" settingAlias="IRQSEL1"/>
-         <value>CAN1 RX</value>
+         <value>INT0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMAINT2" settingAlias="FORCE"/>
@@ -1068,7 +1068,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMAINT2" settingAlias="IRQSEL2"/>
-         <value>SPI1</value>
+         <value>CAN1 RX</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DMA" registerAlias="DMAINT3" settingAlias="FORCE"/>
@@ -1240,7 +1240,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="RxDMAChannel"/>
-         <value>1</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="TxDMAChannel"/>
@@ -1264,7 +1264,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="canTqComboBox"/>
-         <value>10</value>
+         <value>20</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="clockFreqKey"/>
@@ -3628,11 +3628,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CCFG1"/>
-         <value>1</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CCFG2"/>
-         <value>424</value>
+         <value>17342</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CCTRL1"/>
@@ -3924,7 +3924,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG1" settingAlias="BRP"/>
-         <value>TQ = (2 x 2)/FCAN</value>
+         <value>TQ = (2 x 1)/FCAN</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG1" settingAlias="SJW"/>
@@ -3932,7 +3932,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG2" settingAlias="PRSEG"/>
-         <value>1 x TQ</value>
+         <value>7 x TQ</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG2" settingAlias="SAM"/>
@@ -3940,11 +3940,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG2" settingAlias="SEG1PH"/>
-         <value>6 x TQ</value>
+         <value>8 x TQ</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG2" settingAlias="SEG2PH"/>
-         <value>2 x TQ</value>
+         <value>4 x TQ</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG2" settingAlias="SEG2PHTS"/>
@@ -3952,7 +3952,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCFG2" settingAlias="WAKFIL"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CCTRL1" settingAlias="ABAT"/>
@@ -6936,7 +6936,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RC13"/>
-         <value>input</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RC15"/>
@@ -11148,7 +11148,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISC"/>
-         <value>15423</value>
+         <value>7231</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISD"/>
@@ -12680,7 +12680,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC13"/>
-         <value>input</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC15"/>
@@ -13479,70 +13479,90 @@
          <value>disabled</value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.HashMap">
-      <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>32a2292a7119c9b97034e8bdddfc1e2236a5dae576f75773a491ad50305a5c1d</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\dma.c</file>
-         <hash>21d83aebd6e53de592950cb76c03b169df882a977eec6d0452d90b2afec77b64</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>9fd7945f2083f23a63bfd871594720a5698caa12c744927475560ee0fe48e427</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\reset.c</file>
-         <hash>186879f765e24361ef30244f6610d04f5dec0752d3dff063172bed9a95abb7f0</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\clock.c</file>
-         <hash>892cb386bdb2f81a43be2edeab4a20f53b40bbfce452ac7cfaaedcffc9b69e25</hash>
-      </entry>
+   <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>main.c</file>
          <hash>6df6cde4a6b9d8a1b76f99b9aea3c0fe18e23ff5308083b5c1a6709dc33a5456</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\can_types.h</file>
-         <hash>68065ebe5e3c2d112c9af6f3a6a7d8eb59ccd50cf259b1f2eaf8a0f067e7451a</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\pin_manager.h</file>
-         <hash>6181fe96f213df1339d750d674952a05fb7d5a689f32b998af41c68d6ceca6ff</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\dma.h</file>
-         <hash>dd12ec55f2d4de777da7d283c288924fd03424074005e5e6bc500d3674c731e4</hash>
+         <file>mcc_generated_files\can1.c</file>
+         <hash>5957963918590874c6180a0e94f188b008111567b7143c99338f5135af330fa6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\can1.h</file>
          <hash>09b68bb6718befcf61b9d60e744e1ccdedd422310798d907b9e636c533a46db6</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\system_types.h</file>
-         <hash>c188aac0ac9e02c6c32b45b893d355d83cd2ebc261e5f647b0535c9282689fb5</hash>
+         <file>mcc_generated_files\can_module_features.h</file>
+         <hash>50b176e9e89b335abb4a6a87bd5c73788a368b79a810a393e71d3daf3363f64a</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\can_types.h</file>
+         <hash>68065ebe5e3c2d112c9af6f3a6a7d8eb59ccd50cf259b1f2eaf8a0f067e7451a</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\clock.c</file>
+         <hash>892cb386bdb2f81a43be2edeab4a20f53b40bbfce452ac7cfaaedcffc9b69e25</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\clock.h</file>
+         <hash>c2bf9d53232f25859b8355ce47fc1710df7426e97cbd0dba35833bd3aa0f884d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\dma.c</file>
+         <hash>d791d2e05e8c99247637743892dcbc61b4212abd8ef21b5dcd929578c9ec1267</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\dma.h</file>
+         <hash>a7754e4128019e323f8a5ec2edb0f264cea71e564333d4b70381dc7279e0aa17</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\interrupt_manager.c</file>
+         <hash>0482032467dd05060878934bb462baf9356c537fa3688d68b3da95960b4f6598</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>32a2292a7119c9b97034e8bdddfc1e2236a5dae576f75773a491ad50305a5c1d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\mcc.c</file>
+         <hash>02a61ef5b1d983e18313ad2a28b8c69e77ba2e190e374720ed08ae490c3d2bc5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>12ec64b92d42fa61612dd370fec7160600af480d4b67f934ce87f1b27bd9d14f</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pin_manager.c</file>
+         <hash>8057225018f137ffdadcfb4ce53950cdcccecac88da1725067cfcccfd3cf2767</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pin_manager.h</file>
+         <hash>6181fe96f213df1339d750d674952a05fb7d5a689f32b998af41c68d6ceca6ff</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\reset.c</file>
+         <hash>186879f765e24361ef30244f6610d04f5dec0752d3dff063172bed9a95abb7f0</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\reset.h</file>
+         <hash>8d3ae6be3ef465374f30d1542e2c664dde330d68067520ff778dde34aad2f38f</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\reset_types.h</file>
+         <hash>61bff92b21d74dce052ddc45db08b11e25101b7331f5bdfdbaf1794bdae95dfa</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system.c</file>
+         <hash>7d4a3ff04ec7226985e600b6a2953dc1283e62eed02ad0cf9e48267625eebcf5</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
          <hash>aa3409b785e8080a1195f93480290a1dd6f3f93086f9e927ffd232e50e2f7a83</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pin_manager.c</file>
-         <hash>0fce044c4da56f92dbf9b45b01b25b8d21b52866be06f4c3a9aa062136b28a7d</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\can1.c</file>
-         <hash>2b58c8708ae48cccdc04cbc89b48c6fb4e66a95520b0f056509b1ecd98f970c8</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\can_module_features.h</file>
-         <hash>50b176e9e89b335abb4a6a87bd5c73788a368b79a810a393e71d3daf3363f64a</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\system.c</file>
-         <hash>7d4a3ff04ec7226985e600b6a2953dc1283e62eed02ad0cf9e48267625eebcf5</hash>
+         <file>mcc_generated_files\system_types.h</file>
+         <hash>c188aac0ac9e02c6c32b45b893d355d83cd2ebc261e5f647b0535c9282689fb5</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\traps.c</file>
@@ -13553,28 +13573,8 @@
          <hash>6a47b9607240da7123367bcef9c5b9af5200783aa5c81acdb4fdbc55dca8b179</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\clock.h</file>
-         <hash>c2bf9d53232f25859b8355ce47fc1710df7426e97cbd0dba35833bd3aa0f884d</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>0d48927490bd0fd8f65bea3d4ad1f9de4c88be45ccb1ecf3ab214f3db5bffca0</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\mcc.c</file>
-         <hash>02a61ef5b1d983e18313ad2a28b8c69e77ba2e190e374720ed08ae490c3d2bc5</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\reset.h</file>
-         <hash>8d3ae6be3ef465374f30d1542e2c664dde330d68067520ff778dde34aad2f38f</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\watchdog.h</file>
          <hash>cf63c876d78a1208468f425519f875cb8fcd96245116dbf3d037b2737f2542cf</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\reset_types.h</file>
-         <hash>61bff92b21d74dce052ddc45db08b11e25101b7331f5bdfdbaf1794bdae95dfa</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

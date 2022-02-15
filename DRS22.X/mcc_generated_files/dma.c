@@ -72,10 +72,10 @@ void DMA_Initialize(void)
     IFS0bits.DMA0IF = false;
     // Enabling Channel 0 Interrupt
 
-    // AMODE Peripheral Indirect Addressing mode; CHEN disabled; SIZE 16 bit; DIR Reads from peripheral address, writes to RAM address; NULLW disabled; HALF Initiates interrupt when all of the data has been moved; MODE Continuous, Ping-Pong modes are disabled; 
-    DMA1CON= 0x20 & 0x7FFF; //Enable DMA Channel later;
-    // FORCE disabled; IRQSEL CAN1 RX; 
-    DMA1REQ= 0x22;
+    // AMODE Register Indirect with Post-Increment mode; CHEN disabled; SIZE 16 bit; DIR Reads from peripheral address, writes to RAM address; NULLW disabled; HALF Initiates interrupt when all of the data has been moved; MODE Continuous, Ping-Pong modes are disabled; 
+    DMA1CON= 0x00 & 0x7FFF; //Enable DMA Channel later;
+    // FORCE disabled; IRQSEL INT0; 
+    DMA1REQ= 0x00;
     // STA 0; 
     DMA1STAH= 0x00;
     // STA 4096; 
@@ -86,16 +86,17 @@ void DMA_Initialize(void)
     DMA1STBL= 0x00;
     // PAD 0; 
     DMA1PAD= 0x00;
-    // CNT 7; 
-    DMA1CNT= 0x07;
+    // CNT 0; 
+    DMA1CNT= 0x00;
     // Clearing Channel 1 Interrupt Flag;
     IFS0bits.DMA1IF = false;
     // Enabling Channel 1 Interrupt
+    IEC0bits.DMA1IE = 1;
 
     // AMODE Peripheral Indirect Addressing mode; CHEN disabled; SIZE 16 bit; DIR Reads from peripheral address, writes to RAM address; NULLW disabled; HALF Initiates interrupt when all of the data has been moved; MODE Continuous, Ping-Pong modes are disabled; 
     DMA2CON= 0x20 & 0x7FFF; //Enable DMA Channel later;
-    // IRQSEL SPI1; FORCE disabled; 
-    DMA2REQ= 0x0A;
+    // IRQSEL CAN1 RX; FORCE disabled; 
+    DMA2REQ= 0x22;
     // STA 0; 
     DMA2STAH= 0x00;
     // STA 4096; 
@@ -111,6 +112,7 @@ void DMA_Initialize(void)
     // Clearing Channel 2 Interrupt Flag;
     IFS1bits.DMA2IF = false;
     // Enabling Channel 2 Interrupt
+    IEC1bits.DMA2IE = 1;
 
     // MODE Continuous, Ping-Pong modes are disabled; AMODE Register Indirect with Post-Increment mode; CHEN disabled; HALF Initiates interrupt when all of the data has been moved; SIZE 16 bit; DIR Reads from peripheral address, writes to RAM address; NULLW disabled; 
     DMA3CON= 0x00 & 0x7FFF; //Enable DMA Channel later;
@@ -153,30 +155,22 @@ void __attribute__ ((weak)) DMA_Channel1_CallBack(void)
     // Add your custom callback code here
 }
 
-void DMA_Channel1_Tasks( void )
+void __attribute__ ( ( interrupt, no_auto_psv ) ) _DMA1Interrupt( void )
 {
-	if(IFS0bits.DMA1IF)
-	{
-		// DMA Channel1 callback function 
-		DMA_Channel1_CallBack();
-		
-		IFS0bits.DMA1IF = 0;
-	}
+	DMA_Channel1_CallBack();
+	
+    IFS0bits.DMA1IF = 0;
 }
 void __attribute__ ((weak)) DMA_Channel2_CallBack(void)
 {
     // Add your custom callback code here
 }
 
-void DMA_Channel2_Tasks( void )
+void __attribute__ ( ( interrupt, no_auto_psv ) ) _DMA2Interrupt( void )
 {
-	if(IFS1bits.DMA2IF)
-	{
-		// DMA Channel2 callback function 
-		DMA_Channel2_CallBack();
-		
-		IFS1bits.DMA2IF = 0;
-	}
+	DMA_Channel2_CallBack();
+	
+    IFS1bits.DMA2IF = 0;
 }
 void __attribute__ ((weak)) DMA_Channel3_CallBack(void)
 {

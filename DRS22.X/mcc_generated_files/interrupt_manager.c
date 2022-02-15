@@ -52,7 +52,16 @@
 */
 void INTERRUPT_Initialize (void)
 {
+    //    DMA1I: DMA Channel 1
+    //    Priority: 1
+        IPC3bits.DMA1IP = 1;
+    //    DMA2I: DMA Channel 2
+    //    Priority: 1
+        IPC6bits.DMA2IP = 1;
     //    CI: ECAN1 Event
     //    Priority: 1
         IPC8bits.C1IP = 1;
+    //    CTXI: CAN1 TX Data Request
+    //    Priority: 1
+        IPC17bits.C1TXIP = 1;
 }

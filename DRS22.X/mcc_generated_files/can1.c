@@ -50,7 +50,7 @@
 #include "dma.h"
 
 #define CAN1_TX_DMA_CHANNEL DMA_CHANNEL_0
-#define CAN1_RX_DMA_CHANNEL DMA_CHANNEL_1
+#define CAN1_RX_DMA_CHANNEL DMA_CHANNEL_2
 
 /* Valid options are 4, 6, 8, 12, 16, 24, or 32. */
 #define CAN1_MESSAGE_BUFFERS         32
@@ -235,8 +235,8 @@ void CAN1_Initialize(void)
     while(C1CTRL1bits.OPMODE != CAN_CONFIGURATION_MODE);
 
     /* Set up the baud rate*/	
-    C1CFG1 = 0x01;	//BRP TQ = (2 x 2)/FCAN; SJW 1 x TQ; 
-    C1CFG2 = 0x1A8;	//WAKFIL disabled; SEG2PHTS Freely programmable; SEG2PH 2 x TQ; SEG1PH 6 x TQ; PRSEG 1 x TQ; SAM Once at the sample point; 
+    C1CFG1 = 0x00;	//BRP TQ = (2 x 1)/FCAN; SJW 1 x TQ; 
+    C1CFG2 = 0x43BE;	//WAKFIL enabled; SEG2PHTS Freely programmable; SEG2PH 4 x TQ; SEG1PH 8 x TQ; PRSEG 7 x TQ; SAM Once at the sample point; 
     C1FCTRL = 0xC001;	//FSA Transmit/Receive Buffer TRB1; DMABS 32; 
     C1FEN1 = 0x01;	//FLTEN8 disabled; FLTEN7 disabled; FLTEN9 disabled; FLTEN0 enabled; FLTEN2 disabled; FLTEN10 disabled; FLTEN1 disabled; FLTEN11 disabled; FLTEN4 disabled; FLTEN3 disabled; FLTEN6 disabled; FLTEN5 disabled; FLTEN12 disabled; FLTEN13 disabled; FLTEN14 disabled; FLTEN15 disabled; 
     C1CTRL1 = 0x00;	//CANCKS FOSC/2; CSIDL disabled; ABAT disabled; REQOP Sets Normal Operation Mode; WIN Uses buffer window; CANCAP disabled; 
@@ -330,6 +330,8 @@ void CAN1_Initialize(void)
     /* Enable Error interrupt*/
     C1INTEbits.ERRIE = 1;
 
+    /* Enable TxReq IEC bit */
+    IEC4bits.C1TXIE = 1;
     
 }
 
@@ -660,10 +662,22 @@ void __attribute__((__interrupt__, no_auto_psv)) _C1Interrupt(void)
         C1INTFbits.RBIF = 0;  
     } 
     
+    if(C1INTFbits.WAKIF)
+    {
+        if(CAN1_BusWakeUpActivityInterruptHandler)
+        {
+            CAN1_BusWakeUpActivityInterruptHandler();
+        }
+	
+        C1INTFbits.WAKIF = 0;
+    }
    
     IFS2bits.C1IF = 0;
 }
 
+void __attribute__((__interrupt__, no_auto_psv)) _C1TXInterrupt(void) {
+    IFS4bits.C1TXIF = 0;
+}
 
 
 /*******************************************************************************
