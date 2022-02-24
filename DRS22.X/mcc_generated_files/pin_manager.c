@@ -72,8 +72,8 @@ void PIN_MANAGER_Initialize (void)
     /****************************************************************************
      * Setting the GPIO Direction SFR(s)
      ***************************************************************************/
-    TRISA = 0x1F93;
-    TRISB = 0xFFFF;
+    TRISA = 0x1F13;
+    TRISB = 0xFEFF;
     TRISC = 0x3C3F;
     TRISD = 0x0160;
     TRISE = 0xF000;
@@ -112,8 +112,8 @@ void PIN_MANAGER_Initialize (void)
     /****************************************************************************
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
-    ANSELA = 0x1E93;
-    ANSELB = 0x0383;
+    ANSELA = 0x1E13;
+    ANSELB = 0x0283;
     ANSELC = 0x0C3F;
     ANSELE = 0xF000;
     ANSELG = 0x03C0;

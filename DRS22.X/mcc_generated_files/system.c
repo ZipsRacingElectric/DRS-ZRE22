@@ -108,6 +108,8 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
+#include "tmr1.h"
+#include "oc1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 
@@ -116,6 +118,8 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     INTERRUPT_Initialize();
     CLOCK_Initialize();
+    OC1_Initialize();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 }
