@@ -108,10 +108,11 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
-#include "dma.h"
 #include "can1.h"
+#include "dma.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "tmr1.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -120,6 +121,7 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     CAN1_Initialize();
     DMA_Initialize();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 }

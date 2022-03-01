@@ -21,9 +21,11 @@
         <itemPath>mcc_generated_files/can1.h</itemPath>
         <itemPath>mcc_generated_files/can_types.h</itemPath>
         <itemPath>mcc_generated_files/dma.h</itemPath>
+        <itemPath>mcc_generated_files/tmr1.h</itemPath>
       </logicalFolder>
       <itemPath>can_driver.h</itemPath>
       <itemPath>global_constants.h</itemPath>
+      <itemPath>timer_interrupt.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -44,9 +46,11 @@
         <itemPath>mcc_generated_files/clock.c</itemPath>
         <itemPath>mcc_generated_files/can1.c</itemPath>
         <itemPath>mcc_generated_files/dma.c</itemPath>
+        <itemPath>mcc_generated_files/tmr1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>can_driver.c</itemPath>
+      <itemPath>timer_interrupt.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -68,7 +72,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD4Tool</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>2.00</languageToolchainVersion>
+        <languageToolchainVersion>1.70</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
