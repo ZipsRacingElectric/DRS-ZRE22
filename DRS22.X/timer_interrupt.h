@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 void TMR1_initialize();
-
+void Set_Threshold(int value);
 
 #ifdef	__cplusplus
 }

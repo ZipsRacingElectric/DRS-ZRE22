@@ -71,7 +71,10 @@ int main(void)
         LED2_SetHigh();
         __delay_ms(100);
         // Add your application code
-        
+        Set_Threshold(375);
+        __delay_ms(4000);
+        Set_Threshold(250);
+        __delay_ms(4000);
     }
     return 1; 
 }

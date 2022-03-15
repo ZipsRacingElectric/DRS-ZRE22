@@ -56,13 +56,13 @@
 */
 /**
   @Summary
-    Sets the GPIO pin, RA7, high using LATA7.
+    Sets the GPIO pin, RA11, high using LATA11.
 
   @Description
-    Sets the GPIO pin, RA7, high using LATA7.
+    Sets the GPIO pin, RA11, high using LATA11.
 
   @Preconditions
-    The RA7 must be set to an output.
+    The RA11 must be set to an output.
 
   @Returns
     None.
@@ -72,21 +72,21 @@
 
   @Example
     <code>
-    // Set RA7 high (1)
-    IO_RA7_SetHigh();
+    // Set RA11 high (1)
+    IO_RA11_SetHigh();
     </code>
 
 */
-#define IO_RA7_SetHigh()          (_LATA7 = 1)
+#define IO_RA11_SetHigh()          (_LATA11 = 1)
 /**
   @Summary
-    Sets the GPIO pin, RA7, low using LATA7.
+    Sets the GPIO pin, RA11, low using LATA11.
 
   @Description
-    Sets the GPIO pin, RA7, low using LATA7.
+    Sets the GPIO pin, RA11, low using LATA11.
 
   @Preconditions
-    The RA7 must be set to an output.
+    The RA11 must be set to an output.
 
   @Returns
     None.
@@ -96,21 +96,21 @@
 
   @Example
     <code>
-    // Set RA7 low (0)
-    IO_RA7_SetLow();
+    // Set RA11 low (0)
+    IO_RA11_SetLow();
     </code>
 
 */
-#define IO_RA7_SetLow()           (_LATA7 = 0)
+#define IO_RA11_SetLow()           (_LATA11 = 0)
 /**
   @Summary
-    Toggles the GPIO pin, RA7, using LATA7.
+    Toggles the GPIO pin, RA11, using LATA11.
 
   @Description
-    Toggles the GPIO pin, RA7, using LATA7.
+    Toggles the GPIO pin, RA11, using LATA11.
 
   @Preconditions
-    The RA7 must be set to an output.
+    The RA11 must be set to an output.
 
   @Returns
     None.
@@ -120,18 +120,18 @@
 
   @Example
     <code>
-    // Toggle RA7
-    IO_RA7_Toggle();
+    // Toggle RA11
+    IO_RA11_Toggle();
     </code>
 
 */
-#define IO_RA7_Toggle()           (_LATA7 ^= 1)
+#define IO_RA11_Toggle()           (_LATA11 ^= 1)
 /**
   @Summary
-    Reads the value of the GPIO pin, RA7.
+    Reads the value of the GPIO pin, RA11.
 
   @Description
-    Reads the value of the GPIO pin, RA7.
+    Reads the value of the GPIO pin, RA11.
 
   @Preconditions
     None.
@@ -146,18 +146,18 @@
     <code>
     uint16_t portValue;
 
-    // Read RA7
-    postValue = IO_RA7_GetValue();
+    // Read RA11
+    postValue = IO_RA11_GetValue();
     </code>
 
 */
-#define IO_RA7_GetValue()         _RA7
+#define IO_RA11_GetValue()         _RA11
 /**
   @Summary
-    Configures the GPIO pin, RA7, as an input.
+    Configures the GPIO pin, RA11, as an input.
 
   @Description
-    Configures the GPIO pin, RA7, as an input.
+    Configures the GPIO pin, RA11, as an input.
 
   @Preconditions
     None.
@@ -170,18 +170,18 @@
 
   @Example
     <code>
-    // Sets the RA7 as an input
-    IO_RA7_SetDigitalInput();
+    // Sets the RA11 as an input
+    IO_RA11_SetDigitalInput();
     </code>
 
 */
-#define IO_RA7_SetDigitalInput()  (_TRISA7 = 1)
+#define IO_RA11_SetDigitalInput()  (_TRISA11 = 1)
 /**
   @Summary
-    Configures the GPIO pin, RA7, as an output.
+    Configures the GPIO pin, RA11, as an output.
 
   @Description
-    Configures the GPIO pin, RA7, as an output.
+    Configures the GPIO pin, RA11, as an output.
 
   @Preconditions
     None.
@@ -194,12 +194,12 @@
 
   @Example
     <code>
-    // Sets the RA7 as an output
-    IO_RA7_SetDigitalOutput();
+    // Sets the RA11 as an output
+    IO_RA11_SetDigitalOutput();
     </code>
 
 */
-#define IO_RA7_SetDigitalOutput() (_TRISA7 = 0)
+#define IO_RA11_SetDigitalOutput() (_TRISA11 = 0)
 /**
   @Summary
     Sets the GPIO pin, RB13, high using LATB13.
