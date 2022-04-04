@@ -2,17 +2,17 @@
 #include "mcc_generated_files/pin_manager.h"
 
 
-unsigned int counter = 0;
-static int threshold = 375;
+static uint16_t counter = 0;
+static uint16_t threshold = 375;
 
-void Set_Threshold(int value)
+void Set_Threshold(uint16_t value)
 {
     threshold = value;
 }
 
 void PWM1() 
 {
-    counter = (counter + 1);
+    counter++;
     if (counter < threshold)
     {
         IO_RA11_SetHigh();

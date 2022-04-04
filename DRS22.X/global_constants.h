@@ -16,7 +16,10 @@ extern "C" {
 
 #define FCY 40000000UL          // Instruction cycle frequency, Hz - required for __delayXXX() to work
 
+#define DRS_PUSHING_AIR 375
 
+#define DRS_FLAT 250
+    
 #ifdef	__cplusplus
 }
 #endif

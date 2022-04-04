@@ -29,7 +29,7 @@ void CAN_Handle_Message_Rx(void)
         switch(message.msgId)
         {
             case ID_CAN_DRS_STATE:
-                if (message.data[0] == 0x01)
+                if (message.data[0] == 0x01)  //TODO: These values need to be calibrated
                 {
                     Set_Threshold(375);
                 }

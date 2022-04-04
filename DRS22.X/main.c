@@ -61,20 +61,18 @@ int main(void)
     // initialize the device
     SYSTEM_Initialize();
     CAN_Initialize();
-    uint8_t arrayOne[8];
     
-    TMR1_initialize();
+    TMR1_initialize();                 // Remove when done testing
     
     while (1)
     {
-        CAN_Msg_Send(ID_CAN_DRS_STATE, 1, arrayOne);
-        LED2_SetHigh();
+        LED2_Toggle();
         __delay_ms(100);
-        // Add your application code
-        Set_Threshold(375);
-        __delay_ms(4000);
-        Set_Threshold(250);
-        __delay_ms(4000);
+        // Add your application code   // ******************************
+        Set_Threshold(375);            // ******************************
+        __delay_ms(4000);              // ********Remove after testing**
+        Set_Threshold(250);            // ******************************
+        __delay_ms(4000);              // ******************************
     }
     return 1; 
 }
