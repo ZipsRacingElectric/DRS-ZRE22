@@ -62,16 +62,16 @@ int main(void)
     SYSTEM_Initialize();
     CAN_Initialize();
     
-    TMR1_initialize();                 // Remove when done testing
+    TMR1_initialize();                 // TODO: Remove when done testing
     
     while (1)
     {
         LED2_Toggle();
         __delay_ms(100);
         // Add your application code   // ******************************
-        Set_Threshold(375);            // ******************************
-        __delay_ms(4000);              // ********Remove after testing**
-        Set_Threshold(250);            // ******************************
+        Set_Threshold(DRS_UP);            // ******************************
+        __delay_ms(4000);              // ********TODO: Remove after testing**
+        Set_Threshold(DRS_DOWN);            // ******************************
         __delay_ms(4000);              // ******************************
     }
     return 1; 

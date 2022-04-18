@@ -3,23 +3,23 @@
 
 
 static uint16_t counter = 0;
-static uint16_t threshold = 375;
+static uint16_t pwm_high_threshold = 375;
 
 void Set_Threshold(uint16_t value)
 {
-    threshold = value;
+    pwm_high_threshold = value;
 }
 
-void PWM1() 
+void PWM1(void) 
 {
     counter++;
-    if (counter < threshold)
+    if (counter < pwm_high_threshold)
     {
-        IO_RA11_SetHigh();
+        IO_DRS_PWM_SetHigh();
     }
     else
     {
-        IO_RA11_SetLow();
+        IO_DRS_PWM_SetLow();
     }
     if (counter >= 5000)
     {

@@ -77,7 +77,7 @@
     </code>
 
 */
-#define IO_RA11_SetHigh()          (_LATA11 = 1)
+#define IO_DRS_PWM_SetHigh()          (_LATA11 = 1)
 /**
   @Summary
     Sets the GPIO pin, RA11, low using LATA11.
@@ -101,7 +101,7 @@
     </code>
 
 */
-#define IO_RA11_SetLow()           (_LATA11 = 0)
+#define IO_DRS_PWM_SetLow()           (_LATA11 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RA11, using LATA11.

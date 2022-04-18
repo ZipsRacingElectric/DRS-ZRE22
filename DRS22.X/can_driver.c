@@ -16,7 +16,7 @@ void CAN_Initialize(void)
     CAN1_TransmitEnable();
     CAN1_ReceiveEnable();
     CAN1_OperationModeSet(CAN_NORMAL_OPERATION_MODE);
-    CAN1_SetRxBufferInterruptHandler(&CAN_Handle_Message_Rx);
+    CAN1_SetRxBufferInterruptHandler(CAN_Handle_Message_Rx);
     
     CAN_STDBY_SetLow();
 }

@@ -1,6 +1,6 @@
 /* 
  * File:   timer_interrupt.h
- * Author: mzifz
+ * Author: Nathaniel Rohr/Ethan Zifzal/Ethan Schwartz
  *
  * Created on February 24, 2022, 6:50 PM
  */
@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 void TMR1_initialize();
-void Set_Threshold(int value);
+void Set_Threshold(uint16_t value);
 
 #ifdef	__cplusplus
 }
