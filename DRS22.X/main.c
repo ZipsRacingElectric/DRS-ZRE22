@@ -50,23 +50,29 @@
 #include "can_driver.h"
 #include "global_constants.h"
 #include <libpic30.h>        // __delayXXX() functions
-
+#include "timer_interrupt.h"
 /*
                          Main application
  */
+
+
 int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
     CAN_Initialize();
-    uint8_t arrayOne[8];
+    
+    TMR1_initialize();                 // TODO: Remove when done testing
+    
     while (1)
     {
-        CAN_Msg_Send(ID_CAN_DRS_STATE, 1, arrayOne);
-        LED2_SetHigh();
+        LED2_Toggle();
         __delay_ms(100);
-        // Add your application code
-        
+        // Add your application code   // ******************************
+        Set_Threshold(DRS_UP);            // ******************************
+        __delay_ms(4000);              // ********TODO: Remove after testing**
+        Set_Threshold(DRS_DOWN);            // ******************************
+        __delay_ms(4000);              // ******************************
     }
     return 1; 
 }

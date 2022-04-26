@@ -2,6 +2,7 @@
 #include "mcc_generated_files/can_types.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "global_constants.h"
+#include "timer_interrupt.h"
 #include "can_driver.h"
 
 CAN_MSG_OBJ message;
@@ -15,7 +16,7 @@ void CAN_Initialize(void)
     CAN1_TransmitEnable();
     CAN1_ReceiveEnable();
     CAN1_OperationModeSet(CAN_NORMAL_OPERATION_MODE);
-    CAN1_SetRxBufferInterruptHandler(&CAN_Handle_Message_Rx);
+    CAN1_SetRxBufferInterruptHandler(CAN_Handle_Message_Rx);
     
     CAN_STDBY_SetLow();
 }
@@ -28,6 +29,14 @@ void CAN_Handle_Message_Rx(void)
         switch(message.msgId)
         {
             case ID_CAN_DRS_STATE:
+                if (message.data[0] == 0x01)  //TODO: These values need to be calibrated
+                {
+                    Set_Threshold(375);
+                }
+                else
+                {
+                    Set_Threshold(250);
+                }
                 LED3_SetHigh();
                 break;
                 

@@ -56,6 +56,152 @@
 */
 /**
   @Summary
+    Sets the GPIO pin, RA11, high using LATA11.
+
+  @Description
+    Sets the GPIO pin, RA11, high using LATA11.
+
+  @Preconditions
+    The RA11 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA11 high (1)
+    IO_RA11_SetHigh();
+    </code>
+
+*/
+#define IO_DRS_PWM_SetHigh()          (_LATA11 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RA11, low using LATA11.
+
+  @Description
+    Sets the GPIO pin, RA11, low using LATA11.
+
+  @Preconditions
+    The RA11 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA11 low (0)
+    IO_RA11_SetLow();
+    </code>
+
+*/
+#define IO_DRS_PWM_SetLow()           (_LATA11 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RA11, using LATA11.
+
+  @Description
+    Toggles the GPIO pin, RA11, using LATA11.
+
+  @Preconditions
+    The RA11 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RA11
+    IO_RA11_Toggle();
+    </code>
+
+*/
+#define IO_RA11_Toggle()           (_LATA11 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RA11.
+
+  @Description
+    Reads the value of the GPIO pin, RA11.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RA11
+    postValue = IO_RA11_GetValue();
+    </code>
+
+*/
+#define IO_RA11_GetValue()         _RA11
+/**
+  @Summary
+    Configures the GPIO pin, RA11, as an input.
+
+  @Description
+    Configures the GPIO pin, RA11, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA11 as an input
+    IO_RA11_SetDigitalInput();
+    </code>
+
+*/
+#define IO_RA11_SetDigitalInput()  (_TRISA11 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RA11, as an output.
+
+  @Description
+    Configures the GPIO pin, RA11, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA11 as an output
+    IO_RA11_SetDigitalOutput();
+    </code>
+
+*/
+#define IO_RA11_SetDigitalOutput() (_TRISA11 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RB13, high using LATB13.
 
   @Description
